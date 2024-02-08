@@ -46,9 +46,9 @@ func main() {
 		fmt.Printf(`Error: ` + err.Error())
 	} else if remainder == 0 {
 		fmt.Println("numerator is completely divisible by denominator")
+	} else {
+		fmt.Println(remainder, result)
 	}
-
-	fmt.Println(remainder, result)
 }
 
 
