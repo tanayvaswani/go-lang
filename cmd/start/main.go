@@ -61,6 +61,11 @@ func main() {
 			fmt.Println(remainder, result)
 		}
 	}
+
+	switch remainder {
+		case 0: fmt.Println("Completely divisible")
+		case 1,2 : fmt.Println("Remainder is either 1 or 2 ")
+	}
 }
 
 
