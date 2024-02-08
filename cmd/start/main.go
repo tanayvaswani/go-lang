@@ -49,6 +49,18 @@ func main() {
 	} else {
 		fmt.Println(remainder, result)
 	}
+
+	switch {
+		case err != nil: {
+			fmt.Printf(`Error: ` + err.Error())
+		}
+		case remainder == 0: {
+			fmt.Println("numerator is completely divisible by denominator")
+		}
+		default: {
+			fmt.Println(remainder, result)
+		}
+	}
 }
 
 
