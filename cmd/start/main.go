@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"unicode/utf8"
 )
@@ -36,9 +37,35 @@ func main() {
 	fmt.Println(pi)
 
 	printName(`Tanay`)
+
+	var numerator int = 10
+	var denominator int = 2
+	var remainder, result, err = resAndRemain(numerator, denominator)
+
+	if err != nil {
+		fmt.Printf(`Error: ` + err.Error())
+	} else if remainder == 0 {
+		fmt.Println("numerator is completely divisible by denominator")
+	}
+
+	fmt.Println(remainder, result)
 }
 
 
 func printName(name string) {
 	fmt.Println(name)
+}
+
+func resAndRemain(num int, deno int) (int, int, error) {
+	var err error
+
+	if deno == 0 {
+		err = errors.New("denominator can't be zero")
+		return 0, 0, err
+	}
+
+	var remainder int = num % deno
+	var answer int = num / deno
+
+	return remainder, answer, err
 }
